@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSE labs</title>
+    <link rel="stylesheet" href="style.css" />
+    <base href="" />
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="#radiobutton">Radiobutton</a>
+            <a href="#checkbox">Checkbox</a>
+            <a href="#textInput">Text Input</a>
+            <a href="#tabs">Tabs</a>
+            <a href="#button">Button</a>
+            <a href="#textLabel">Text Label</a>
+            <a href="#link">Link</a>
+            <a href="#tooltip">Tooltip</a>
+            <a href="#dropdownList">Dropdown List</a>
+            <a href="#dataGrid">Data Grid</a>
+        </nav>
+    </header>
+    <main>
+        <section id="radiobutton">
+            <div class="card">
+                <h2>Radiobutton</h2>
+                <p>Radiobutton - a user interface element that allows you to select <b></b>only one option</b> from a
+                    set of
+                    related options</p>
+                <form>
+                    <label><input type="radio" name="payment" value="1"> Option 1</label><br>
+                    <label><input type="radio" name="payment" value="2"> Option 2</label><br>
+                    <label><input type="radio" name="payment" value="3"> Option 3</label>
+                </form>
+            </div>
+        </section>
+
+        <section id="checkbox">
+            <div class="card">
+                <h2>Checkbox</h2>
+                <p>A checkbox allows the user to select <b>multiple independent options</b> or toggle one on/off.</p>
+
+                <form>
+                    <label><input type="checkbox"> Cheese</label><br>
+                    <label><input type="checkbox"> Mushrooms</label><br>
+                    <label><input type="checkbox"> Pepperoni</label>
+                </form>
+            </div>
+        </section>
+
+        <section id="textInput">
+            <div class="card">
+                <h2>Text Input</h2>
+                <p>A text input allows the user to <b>enter text or numbers</b>.</p>
+
+                <form>
+                    <label>Username: <input type="text" name="username"></label><br><br>
+                    <label>Email: <input type="email" name="email"></label><br><br>
+                    <label>Password: <input type="password" name="password"></label>
+                </form>
+            </div>
+        </section>
+
+        <section id="tabs">
+            <div class="card">
+                <h2>Tabs</h2>
+                <p>Tabs allow switching between <b>different content sections</b> without leaving the page.</p>
+                <div class="example">
+                    <div>
+                        <button onclick="showTab('basket')">Basketball</button>
+                        <button onclick="showTab('volley')">Volleyball</button>
+                        <button onclick="showTab('golf')">Golf</button>
+                    </div>
+                    <div id="basket" class="tab">Basketball is fun</div>
+                    <div id="volley" class="tab" style="display:none;">Volleyball is also wonderful</div>
+                    <div id="golf" class="tab" style="display:none;">Golf is something different</div>
+                </div>
+
+
+                <script>
+                    function showTab(id) {
+                        document.querySelectorAll('.tab').forEach(el => el.style.display = 'none');
+                        document.getElementById(id).style.display = 'block';
+                    }
+                </script>
+            </div>
+        </section>
+
+        <section id="button">
+            <div class="card">
+                <h2>Button</h2>
+                <p>A button is a clickable element that <b>triggers an action</b>.</p>
+                <div class="example">
+                    <p>Count: <span id="counter">0</span></p>
+                    <button onclick="increaseCounter()">Increase</button>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            let count = 0;
+
+            function increaseCounter() {
+                count++;
+                document.getElementById("counter").textContent = count;
+            }
+        </script>
+
+
+        <section id="textLabel">
+            <div class="card">
+                <h2>Text Label</h2>
+                <p>A label describes or names another UI element, often an input field.</p>
+
+                <div class="example">
+                    <label for="user">Username:</label>
+                    <input id="user" type="text" oninput="showUsername()"><br><br>
+                    <p>Your username is: <span id="displayUser">—</span></p>
+                </div>
+            </div>
+        </section>
+
+        <script>
+            function showUsername() {
+                const value = document.getElementById("user").value;
+                document.getElementById("displayUser").textContent = value || "—";
+            }
+        </script>
+
+        <section id="link">
+            <div class="card">
+                <h2>Link</h2>
+                <p>A link navigates the user to another <b>page, section, or website</b>.</p>
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&t=2s&ab_channel=RickAstley" target="_blank">You can
+                    click here</a>
+            </div>
+        </section>
+
+        <section id="tooltip">
+            <div class="card">
+                <h2>Tooltip</h2>
+                <p>A tooltip is a small popup that provides <b>additional info</b> when hovering over an element.</p>
+
+                <div class="tooltip">See tooltip <span class="tooltiptext">Tip: Do not click on the link in the previous
+                        section.</span></div>
+
+            </div>
+        </section>
+
+        <section id="dropdownList">
+            <div class="card">
+                <h2>Dropdown List</h2>
+                <p>A dropdown list allows the user to <b>choose one option</b> from a set.</p>
+
+                <select name="country">
+                    <option>Ukraine</option>
+                    <option>USA</option>
+                    <option>Germany</option>
+                    <option>Japan</option>
+                </select>
+            </div>
+        </section>
+
+        <section id="dataGrid">
+            <div class="card">
+                <h2>Data Grid</h2>
+                <p>A data grid displays structured information in <b>rows and columns</b>.</p>
+
+                <table border="1" cellpadding="10">
+                    <tr>
+                        <th>Fruit</th>
+                        <th>Color</th>
+                        <th>Taste</th>
+                    </tr>
+                    <tr>
+                        <td>Apple</td>
+                        <td>Red</td>
+                        <td>Sweet</td>
+                    </tr>
+                    <tr>
+                        <td>Banana</td>
+                        <td>Yellow</td>
+                        <td>Sweet</td>
+                    </tr>
+                    <tr>
+                        <td>Lemon</td>
+                        <td>Yellow</td>
+                        <td>Sour</td>
+                    </tr>
+                    <tr>
+                        <td>Blueberry</td>
+                        <td>Blue</td>
+                        <td>Sweet</td>
+                    </tr>
+                    <tr>
+                        <td>Kiwi</td>
+                        <td>Green</td>
+                        <td>Tangy</td>
+                    </tr>
+
+                </table>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
